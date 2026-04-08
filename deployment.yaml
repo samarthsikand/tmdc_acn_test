@@ -15,7 +15,7 @@ lens:
     name: minervac   # Cluster name; this cluster should include all RDBMS depots (catalogs) used by the semantic model SQL files.
     catalog: icebase # Depot (catalog) name; this depot should include all RDBMS based depots (catalogs) used by the semantic model SQL files.
   repo:  # Repository URL and base directory for the semantic model SQL files.
-    url: https://bitbucket.org/rubik_/solutions-sales-training/src/main/solutions-sales-training
+    url: https://github.com/samarthsikand/tmdc_acn_test/tree/main
     lensBaseDir: solutions-sales-training/training/05-dataproducts/5.2-semantic-model/model
     syncFlags:     # Branch name to sync from.
       - --ref=main
