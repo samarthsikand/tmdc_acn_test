@@ -1,27 +1,4 @@
 user_groups:
-  # PII access policy: this group gets masked values where secure meta is configured.
-  - name: mask_data
-    api_scopes:
-      - meta
-      - data
-      - graphql
-      - jobs
-      - source
-    includes: "*"
-    excludes:
-      - users:id:abc
-      - users:id:xyz # change to a real user ID
-
-  # Data segmentation policy: used for row/segment level access controls.
-  - name: segment_data
-    api_scopes:
-      - meta
-      - data
-      - graphql
-      - jobs
-      - source
-    includes:
-      - roles:id:japan-users # change to a real role ID
 
   # Default fallback access.
   - name: default
