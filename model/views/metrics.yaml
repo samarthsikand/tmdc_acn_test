@@ -1,0 +1,22 @@
+views:
+  - name: inventory_metrics
+    description: "Unified business metrics view for inventory management, stock levels, and reorder quantities."
+    public: true
+    meta:
+      tags:
+        # Keep tags aligned with deployment and data product taxonomy.
+        - Inventory
+      metric:
+        # Refresh daily at midnight UTC.
+        expression: "0 0 * * *"
+        timezone: "UTC"
+        window: "day"
+    # For each metric, include one measure and one time dimension.
+    tables:
+      # Base fact table path.
+      - join_path: inventory
+        prefix: true
+        includes:
+          - total_stock
+          - quantity_in_stock
+          - reorder_qty

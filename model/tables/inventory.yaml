@@ -1,0 +1,49 @@
+tables:
+  - name: customer
+    sql: {{ load_sql('inventory') }}
+    description: "Inventory table"
+    public: true
+
+    dimensions:
+      - name: id
+        type: string
+        column: id
+        description: "Unique customer identifier."
+        primary_key: true
+        public: true
+
+      - name: sku_name
+        type: string
+        column: sku_name
+        description: "SKU display name."
+
+      - name: sku_id
+        type: string
+        column: sku_id
+        description: "SKU identifier."
+
+      - name: warehouse_id
+        type: string
+        column: warehouse_id
+        description: "Warehouse identifier."
+
+      - name: quantity_in_stock
+        type: number
+        column: quantity_in_stock
+        description: "Quantity of items in stock."
+
+    measures:
+      - name: total_stock
+        type: sum
+        sql: "{TABLE.quantity_in_stock}"
+        description: "Total units in stock."
+
+    # Segment example: restrict a country-based slice to a specific user group.
+    segments:
+      - name: pabco_tahoma_customers
+        sql: "{TABLE.sku_id} = 'PABCO-TAHOMA'"
+        meta:
+          secure:
+            user_groups:
+              includes:
+                - segment_data
