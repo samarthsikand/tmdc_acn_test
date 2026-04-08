@@ -1,5 +1,5 @@
 version: v1alpha
-name: "sales-360"  # change as per name of semantic model
+name: "retail_acn_inventory"  # change as per name of semantic model
 layer: user
 type: lens
 tags:
@@ -8,7 +8,7 @@ description: Data model for supply chain intelligence
 lens:
   compute: runnable-default
   secrets:
-    - name: sales360 # Secret name, secret used for access to the semantic model from git repository.
+    - name: retail_acn_inventory # Secret name, secret used for access to the semantic model from git repository.
       allKeys: true
   source:
     type: minerva    # Query engine type.
