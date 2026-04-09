@@ -1,5 +1,5 @@
 version: v1alpha
-name: "retail_acn_inventory"  # change as per name of semantic model
+name: "retail-acn-inventory"  # change as per name of semantic model
 layer: user
 type: lens
 tags:
@@ -16,7 +16,7 @@ lens:
     catalog: postgresdb # Depot (catalog) name; this depot should include all RDBMS based depots (catalogs) used by the semantic model SQL files.
   repo:  # Repository URL and base directory for the semantic model SQL files.
     url: https://github.com/samarthsikand/tmdc_acn_test
-    lensBaseDir: tmdc_acn_test
+    lensBaseDir: tmdc_acn_test/model
     syncFlags:     # Branch name to sync from.
       - --ref=main
 
