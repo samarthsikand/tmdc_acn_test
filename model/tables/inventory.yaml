@@ -1,5 +1,5 @@
 tables:
-  - name: customer
+  - name: inventory
     sql: {{ load_sql('inventory') }}
     description: "Inventory table"
     public: true
@@ -31,6 +31,12 @@ tables:
         type: number
         column: quantity_in_stock
         description: "Quantity of items in stock."
+
+      - name: created_at
+        type: time
+        column: created_at
+        description: "Timestamp when the record was created."
+
 
     measures:
       - name: total_stock

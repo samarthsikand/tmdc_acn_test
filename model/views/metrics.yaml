@@ -20,3 +20,4 @@ views:
           - total_stock
           - quantity_in_stock
           - reorder_qty
+          - created_at
