@@ -46,4 +46,4 @@ tables:
           secure:
             user_groups:
               includes:
-                - segment_data
+                - default
